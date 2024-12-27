@@ -5,6 +5,16 @@ using System.Security.Claims;
 
 namespace Assignment_1_OOP
 {
+
+    enum Gender
+    {
+        Male , Female
+    }
+
+    enum Days
+    {
+          Saturday, Sunday, Monday , Tuesday , Wednesday, Thursday, Friday
+    }
     internal class Program
     {
 
@@ -117,9 +127,22 @@ namespace Assignment_1_OOP
 
 
             //Access Modifier Allowed Inside Class?
-             //Private[Default]    Private Protected    Protected    Internal    Protected Internal   Public
+            //Private[Default]    Private Protected    Protected    Internal    Protected Internal   Public
 
 
+
+
+            #endregion
+
+            #region Enum 
+
+            //Employee employee = new Employee();
+            //employee.genger = Gender.Male;
+
+            //Days days = Days.Friday;
+            //Days days = (Days)2;
+
+            //Enum.TryParse<Days>(Console.ReadLine(), true, out Days  day);
 
 
             #endregion
