@@ -24,8 +24,17 @@ namespace Assignment_1_OOP
     {
         Red, Green, Blue
     }
+
+    
     internal class Program
     {
+
+        public static double CalculateDestance(Point p1, Point p2)
+        {
+            double deltaX = p2.X - p1.X;
+            double deltaY = p2.Y - p1.Y;
+            return Math.Sqrt(deltaX * deltaX + deltaY * deltaY);
+        }
 
         static void Main(string[] args)
         {
@@ -57,40 +66,40 @@ namespace Assignment_1_OOP
             //Write a C# program that takes a season name as input from the user and displays the corresponding month range for that season.
             //Note range for seasons ( spring march to may , summer june to august , autumn September to November , winter December to February)
 
-            try
-            {
-                bool Flags;
-                Season season;
-                do
-                {
-                    Console.WriteLine("Enter the season");
-                    Flags = Enum.TryParse<Season>(Console.ReadLine(), true, out season);
+            //try
+            //{
+            //    bool Flags;
+            //    Season season;
+            //    do
+            //    {
+            //        Console.WriteLine("Enter the season");
+            //        Flags = Enum.TryParse<Season>(Console.ReadLine(), true, out season);
 
-                } while (!Flags);
+            //    } while (!Flags);
 
-                switch (season)
-                {
-                    case Season.Spring:
-                        Console.WriteLine("spring: march to may ");
-                        break;
+            //    switch (season)
+            //    {
+            //        case Season.Spring:
+            //            Console.WriteLine("spring: march to may ");
+            //            break;
 
-                    case Season.Summer:
-                        Console.WriteLine("summer: june to august");
-                        break;
+            //        case Season.Summer:
+            //            Console.WriteLine("summer: june to august");
+            //            break;
 
-                    case Season.Autumn:
-                        Console.WriteLine("autumn: September to November");
-                        break;
+            //        case Season.Autumn:
+            //            Console.WriteLine("autumn: September to November");
+            //            break;
 
-                    case Season.Winter:
-                        Console.WriteLine("winter: December to February");
-                        break;
+            //        case Season.Winter:
+            //            Console.WriteLine("winter: December to February");
+            //            break;
 
-                }
-            } catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            //    }
+            //} catch(Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
 
             #endregion
 
@@ -141,41 +150,73 @@ namespace Assignment_1_OOP
             // Write a C# program that takes a color name as input from the user and displays a message
             // indicating whether the input color is a primary color or not.
 
-            try
+            //try
+            //{
+
+
+            //    Console.Write(" Please Enter Color Name : ");
+
+            //    if (Enum.TryParse(Console.ReadLine(), true, out Colors color))
+            //    {
+
+            //        switch (color)
+            //        {
+            //            case Colors.Red:
+            //            case Colors.Green:
+            //            case Colors.Blue:
+            //                Console.WriteLine("Color is a primary color");
+            //                break;
+            //            default:
+            //                Console.WriteLine("Color is not primary color");
+            //                break;
+
+            //        }
+
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input Or Color is not primary color Blease Enter Primary Color");
+
+            //    }
+            //}
+            //catch(Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+
+
+
+
+            #endregion
+
+            #region Q5
+            // Create a struct called "Point" to represent a 2D point with properties "X" and "Y".
+            // Write a C# program that takes two points as input from the user and calculates the distance between them.
+
+            Point P01 = new Point();
+            Point P02 = new Point();
+            bool Flag;
+            do
             {
+                Console.WriteLine("Enter Value X1 : ");
+                Flag = double.TryParse(Console.ReadLine(), out P01.X);
+                Console.WriteLine("Enter Value y1 : ");
+                Flag = double.TryParse(Console.ReadLine(), out P01.Y);
 
+                Console.WriteLine("Enter Value X2 : ");
+                Flag = double.TryParse(Console.ReadLine(), out P02.X);
+                Console.WriteLine("Enter Value y2 : ");
+                Flag = double.TryParse(Console.ReadLine(), out P02.Y);
 
-                Console.Write(" Please Enter Color Name : ");
-
-                if (Enum.TryParse(Console.ReadLine(), true, out Colors color))
+                if (!Flag)
                 {
-
-                    switch (color)
-                    {
-                        case Colors.Red:
-                        case Colors.Green:
-                        case Colors.Blue:
-                            Console.WriteLine("Color is a primary color");
-                            break;
-                        default:
-                            Console.WriteLine("Color is not primary color");
-                            break;
-
-                    }
-
+                    Console.WriteLine("Invalid input. Please enter integers only.");
                 }
-                else
-                {
-                    Console.WriteLine("Invalid input Or Color is not primary color Blease Enter Primary Color");
 
-                }
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            } while (!Flag);
 
-
+            
+            Console.WriteLine(CalculateDestance(P01, P02));
 
 
             #endregion
