@@ -22,6 +22,30 @@ namespace Assignment_1_OOP
         Delete = 1, Execute = 2, Read = 4, write = 8
 
     }
+
+    public struct Point
+    {
+        public int x;
+        public int y;
+
+        public Point(int _x , int _y)
+        {
+            x = _x;
+            y = _y;
+        }
+
+        public Point()
+        {
+            x = 0;
+            y = 0;
+        }
+
+        public Point(int num)
+        {
+            x = y = num;
+           
+        }
+    }
     internal class Program
     {
 
@@ -179,6 +203,35 @@ namespace Assignment_1_OOP
 
 
             }
+            #endregion
+
+            #region Strucrt
+
+            //What You Can Write Inside The Struct Or Class
+            //1.Attributes[Fields] => Member Variable
+            //2.Functions[Constructor, Getter Setter, Method]
+            //3.Properties[Full Property, Automatic Property, Indexer]
+            //4.Events
+
+
+            //Access Modifier Allowed Inside Struct?
+            //Private[Default]    Internal       Public
+
+            //Point p01 = new Point();
+
+            //Console.WriteLine(p01.x);
+            //Console.WriteLine(p01.y);
+
+            //Point p01 = new Point(2,7);
+
+            //Console.WriteLine(p01.x);
+            //Console.WriteLine(p01.y);
+
+            Point p01 = new Point(2);
+
+            Console.WriteLine(p01.x);
+            Console.WriteLine(p01.y);
+
             #endregion
 
         }
