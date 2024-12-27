@@ -99,32 +99,39 @@ namespace Assignment_1_OOP
             //Create Variable from previous Enum to Add and Remove Permission from variable,
             //check if specific Permission is existed inside variable
 
-            Permissions permissions = new Permissions();
-
-            // Add Permision
-            permissions= permissions | Permissions.Delete;
-            permissions = permissions | Permissions.Read;
-            permissions = permissions | Permissions.Execute;
-
-            Console.WriteLine(permissions);
-
-            // Delete 
-            if((permissions & Permissions.Execute) ==  Permissions.Execute)
+            try
             {
-                // if exist it will delete
-                permissions = permissions ^ Permissions.Execute;
+                Permissions permissions = new Permissions();
 
+                // Add Permision
+                permissions = permissions | Permissions.Delete;
+                permissions = permissions | Permissions.Read;
+                permissions = permissions | Permissions.Execute;
+
+                Console.WriteLine(permissions);
+
+                // Delete 
+                if ((permissions & Permissions.Execute) == Permissions.Execute)
+                {
+                    // if exist it will delete
+                    permissions = permissions ^ Permissions.Execute;
+
+                }
+                else
+                {
+                    // if not exist => does not make action 
+                    permissions = permissions;
+
+
+                }
+
+                Console.WriteLine(permissions);
             }
-            else
+
+            catch (Exception e) 
             {
-                // if not exist => does not make action 
-                permissions = permissions;
-
-
+                Console.WriteLine(e.Message);
             }
-
-            Console.WriteLine(permissions);
-
 
 
             #endregion
