@@ -15,6 +15,13 @@ namespace Assignment_1_OOP
     {
           Saturday, Sunday, Monday , Tuesday , Wednesday, Thursday, Friday
     }
+
+    [Flags]
+    enum Permissions : byte
+    {
+        Delete = 1, Execute = 2, Read = 4, write = 8
+
+    }
     internal class Program
     {
 
@@ -145,6 +152,33 @@ namespace Assignment_1_OOP
             //Enum.TryParse<Days>(Console.ReadLine(), true, out Days  day);
 
 
+            #endregion
+
+            #region Permission
+
+            Permissions permissions = new Permissions();
+
+            // Add Permision
+            permissions = permissions | Permissions.Delete;
+            permissions = permissions | Permissions.Read;
+            permissions = permissions | Permissions.Execute;
+
+            Console.WriteLine(permissions);
+
+            // Delete 
+            if ((permissions & Permissions.Execute) == Permissions.Execute)
+            {
+                // if exist it will delete
+                permissions = permissions ^ Permissions.Execute;
+
+            }
+            else
+            {
+                // if not exist => does not make action 
+                permissions = permissions;
+
+
+            }
             #endregion
 
         }
