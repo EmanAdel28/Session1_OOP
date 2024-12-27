@@ -141,32 +141,38 @@ namespace Assignment_1_OOP
             // Write a C# program that takes a color name as input from the user and displays a message
             // indicating whether the input color is a primary color or not.
 
-            
-            Colors color;
-         
-                Console.Write(" Please Enter Color Name : ");
-               
-            if(Enum.TryParse(Console.ReadLine(), true, out color))
+            try
             {
 
-                switch (color)
+
+                Console.Write(" Please Enter Color Name : ");
+
+                if (Enum.TryParse(Console.ReadLine(), true, out Colors color))
                 {
-                    case Colors.Red:
-                    case Colors.Green:
-                    case Colors.Blue:
-                        Console.WriteLine("Color is a primary color");
-                        break;
-                    default:
-                        Console.WriteLine("Color is not primary color");
-                        break;
+
+                    switch (color)
+                    {
+                        case Colors.Red:
+                        case Colors.Green:
+                        case Colors.Blue:
+                            Console.WriteLine("Color is a primary color");
+                            break;
+                        default:
+                            Console.WriteLine("Color is not primary color");
+                            break;
+
+                    }
 
                 }
+                else
+                {
+                    Console.WriteLine("Invalid input Or Color is not primary color Blease Enter Primary Color");
 
+                }
             }
-            else
+            catch(Exception e)
             {
-                Console.WriteLine("Invalid input Or Color is not primary color Blease Enter Primary Color");
-
+                Console.WriteLine(e.Message);
             }
 
 
