@@ -1,4 +1,7 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
+using System.Diagnostics.Metrics;
+using System.Security.Claims;
 
 namespace Assignment_1_OOP
 {
@@ -91,6 +94,30 @@ namespace Assignment_1_OOP
                 Console.WriteLine("Finally");
             }
             Console.WriteLine("Afer Try - Catch");
+
+
+
+
+            #endregion
+
+            #region Access Modifier
+            //Access Modifier Allowed Inside Namespace ?
+            //1.Internal[Default]
+            //2.Public
+
+            //What You Can Write Inside Namespace ?
+            // 1.Class   2.Struct   3.Interface    4.Enum
+
+
+            //What You Can Write Inside The Struct Or Class
+            //1.Attributes[Fields] => Member Variable
+            //2.Functions[Constructor, Getter Setter, Method]
+            //3.Properties[Full Property, Automatic Property, Indexer]
+            //4.Events
+
+
+            //Access Modifier Allowed Inside Class?
+             //Private[Default]    Private Protected    Protected    Internal    Protected Internal   Public
 
 
 
